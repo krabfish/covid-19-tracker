@@ -13,9 +13,9 @@ const categories = [
 ]
 let countries = {};
 
-// Dev
-// fetch('testing.json')
-fetch('https://api.covid19api.com/summary')
+// TODO: Dev
+fetch('testing.json')
+// fetch('https://api.covid19api.com/summary')
 .then((response) => {
   return response.json();
 })
@@ -115,7 +115,7 @@ function search() {
 }
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth'});
+  window.scrollTo({ top: 0});
 }
 
 function showTopBtn() {
