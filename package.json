@@ -5,11 +5,13 @@
   "main": "js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "lite-server"
+    "compile:sass": "node-sass -w --include-path sass css/main.sass css/main.css",
+    "dev": "npm run compile:sass & lite-server"
   },
   "author": "Michael Neumann",
   "license": "ISC",
   "devDependencies": {
-    "lite-server": "^2.5.4"
+    "lite-server": "^2.5.4",
+    "node-sass": "^4.13.1"
   }
 }

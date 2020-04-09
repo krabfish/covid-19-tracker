@@ -1,0 +1,94 @@
+@import "./variables"
+@import "./base"
+
+.date
+  font-weight: lighter
+
+#search
+  text-align: center
+  margin: 0.5rem
+
+#search__input
+  border: 1px solid #333333
+  border-radius: 4px
+  padding: 0.5rem
+  width: 250px
+
+.global__tracking, .country__tracking
+  display: flex
+  flex-direction: column
+  list-style: none
+  justify-content: center
+  margin: 0 auto
+  padding-left: 0
+
+.global__tracking li
+  background-color: #f5f5f5
+  border-radius: 4px
+  margin: 0.5rem auto
+  padding: 0.5rem
+
+.country__list
+  align-items: center
+  display: flex
+  flex-direction: column
+  justify-content: center
+  padding-left: 0
+
+.country__tracking li
+  border-radius: 4px
+  margin: 0.5rem
+  padding: 0.5rem
+
+.country__name
+  background-color: #333333
+  color: white
+  display: flex
+  flex-direction: column
+  list-style: none
+  margin-left: 0
+
+.country__category
+  background-color: #f5f5f5
+  list-style: none
+
+.top
+  bottom: 2rem
+  position: fixed
+  right: 2rem
+  z-index: 99
+
+.loader
+  animation: fade 1s infinite ease-in-out
+
+@keyframes fade
+  0%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+
+.hidden
+  display: none
+
+.thee-foot
+  background-color: #333333
+  color: white
+  font-size: 12px
+  font-weight: 300
+  letter-spacing: 1px
+  margin-top: 6.25rem
+  padding: 1rem
+  text-align: center
+
+.thee-foot a
+  color: white
+
+  &:hover
+    color: orange
+
+@media screen and (min-width: 576px)
+  .global__tracking, .country__list
+    flex-direction: row
+    flex-wrap: wrap
