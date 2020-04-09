@@ -1,0 +1,15 @@
+{
+  "name": "covid-19-tracker",
+  "version": "1.0.0",
+  "description": "Simple COVID-19 Data Tracker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "author": "Michael Neumann",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
