@@ -6,3 +6,6 @@ testing.json
 
 # System Files
 .DS_Store
+
+#IDE
+.idea
