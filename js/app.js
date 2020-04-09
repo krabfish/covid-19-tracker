@@ -55,7 +55,7 @@ input.addEventListener("keyup", function(event) {
 * Search button setup.
 * Get element by ID; add EL
 * */
-const submitBtn = document.getElementById("search__button");
+const submitBtn = document.querySelector(".search__button");
 submitBtn.addEventListener("click", function() {search(input, obj)});
 
 /*

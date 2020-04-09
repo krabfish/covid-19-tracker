@@ -1,11 +1,19 @@
 @import "./variables"
+
 body
-  font-family: var(--font-family-base)
+  font-family: $font-family-base
   margin: 0
 
 h1, h2, h3
-  font-family: var(--heading-font-family)
+  font-family: $heading-font-family
   text-align: center
+
+header
+  background-color: $dark-gray
+  padding: 0.5rem
+
+  h1
+    color: white
 
 button
   background-color: orange
@@ -15,5 +23,5 @@ button
   transition: all 500ms ease-in-out
 
   &:hover
-    background-color: #333333
+    background-color: $dark-gray
     color: white

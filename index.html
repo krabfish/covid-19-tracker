@@ -14,7 +14,9 @@
 </head>
 <body>
   <div id=app>
-    <h1>COVID-19 Tracker</h1>
+    <header>
+      <h1>COVID-19 Tracker</h1>
+    </header>
     <h3>As of <span class="date"></span></h3>
     <section id="global">
       <h2>Globally</h2>
@@ -22,11 +24,11 @@
     </section>
     <section id="countries">
       <h2>Country</h2>
-      <div id="search">
+      <div class="search">
         <label for="search__input">
           <input id="search__input" type="text" placeholder="Enter Country Name or Code">
         </label>
-        <button id="search__button">Search</button>
+        <button class="search__button">Search</button>
       </div>
       <div id="country">
         <ul class="country__tracking"></ul>

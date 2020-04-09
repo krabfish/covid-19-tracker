@@ -5,8 +5,9 @@
   "main": "js/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile:sass": "node-sass -w --include-path sass css/main.sass css/main.css",
-    "dev": "npm run compile:sass & lite-server"
+    "compile:sass": "node-sass --include-path sass css/main.sass css/main.css",
+    "watch:sass": "node-sass -w --include-path sass css/main.sass css/main.css",
+    "dev": "npm run watch:sass & lite-server"
   },
   "author": "Michael Neumann",
   "license": "ISC",
