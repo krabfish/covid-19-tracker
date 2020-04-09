@@ -17,6 +17,7 @@ const categories = [
   "New Recovered",
   "Total Recovered"
 ]
+let obj = {};
 
 // TODO: Development - It's a mess :(
 fetch('testing.json')
@@ -28,7 +29,7 @@ fetch('testing.json')
   // console.log(data);
   date.innerHTML = new Date();
 
-  let obj = data.Global;
+  obj = data.Global;
   globally(obj, categories);
 
   obj = data.Countries;
@@ -45,7 +46,7 @@ fetch('testing.json')
 * */
 input.addEventListener("keyup", function(event) {
   if (event.key === "Enter") {
-    search();
+    search(input, obj);
   }
 })
 
@@ -55,7 +56,7 @@ input.addEventListener("keyup", function(event) {
 * Get element by ID; add EL
 * */
 const submitBtn = document.getElementById("search__button");
-submitBtn.addEventListener("click", search);
+submitBtn.addEventListener("click", function() {search(input, obj)});
 
 /*
 * To top button setup.

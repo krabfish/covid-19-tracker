@@ -36,7 +36,7 @@ export function country(obj, categories) {
   });
 }
 
-export function search() {
+export function search(element ,countries) {
   const options = {
     isCaseSensitive: false,
     findAllMatches: false,
@@ -59,10 +59,10 @@ export function search() {
 // Change the pattern
   const pattern = "Austria";
 
-  const result = fuse.search(input.value.toLowerCase());
+  const result = fuse.search(element.value.toLowerCase());
 
   const ref = document.getElementById(`${result[0].item.Country.toLowerCase()}`);
-  input.value = ""
+  element.value = ""
   ref.scrollIntoView();
 }
 
