@@ -23,12 +23,28 @@ button {
     background-color: #333333;
     color: white; }
 
+footer {
+  background-color: #333333;
+  color: white;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-top: 6.25rem;
+  padding: 1rem;
+  text-align: center; }
+  footer a {
+    color: white; }
+    footer a:hover {
+      color: orange; }
+
 .date {
   font-weight: lighter; }
 
 .search {
   text-align: center;
   margin: 0.5rem; }
+  .search button {
+    margin: 0.3rem auto 1rem 0; }
 
 #search__input {
   border: 1px solid #333333;
@@ -94,22 +110,10 @@ button {
 .hidden {
   display: none; }
 
-.thee-foot {
-  background-color: #333333;
-  color: white;
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-top: 6.25rem;
-  padding: 1rem;
-  text-align: center; }
-
-.thee-foot a {
-  color: white; }
-  .thee-foot a:hover {
-    color: orange; }
-
 @media screen and (min-width: 576px) {
   .global__tracking, .country__list {
     flex-direction: row;
-    flex-wrap: wrap; } }
+    flex-wrap: wrap; }
+  .search {
+    text-align: center;
+    margin: 0.5rem; } }
