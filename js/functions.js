@@ -1,53 +1,5 @@
-const loader = document.querySelector(".loader");
-const date = document.querySelector(".date");
-const globe = document.querySelector(".global__tracking");
-const local = document.querySelector(".country__tracking");
-const input = document.getElementById("search__input");
-const categories = [
-  "New Confirmed",
-  "Total Confirmed",
-  "New Deaths",
-  "Total Deaths",
-  "New Recovered",
-  "Total Recovered"
-]
-let countries = {};
-
-// TODO: Dev
-fetch('testing.json')
-// fetch('https://api.covid19api.com/summary')
-.then((response) => {
-  return response.json();
-})
-.then((data) => {
-  // console.log(data);
-  date.innerHTML = new Date();
-
-  obj = data.Global;
-  globally(obj);
-
-  obj = data.Countries;
-
-  country(obj);
-  countries = obj;
-  loader.classList.add("hidden");
-});
-
-input.addEventListener("keyup", function(event) {
-  if (event.key === "Enter") {
-    search();
-  }
-})
-
-const submitBtn = document.getElementById("search__button");
-submitBtn.addEventListener("click", search);
-
-const toTopBtn = document.querySelector(".top");
-toTopBtn.addEventListener("click", scrollToTop);
-
-window.addEventListener("scroll", showTopBtn);
-
-function globally(obj) {
+export function globally(obj, categories) {
+  const globe = document.querySelector(".global__tracking");
   let index = 0;
   for (const item in obj) {
     const li = document.createElement("li");
@@ -57,8 +9,8 @@ function globally(obj) {
   }
 }
 
-function country(obj) {
-
+export function country(obj, categories) {
+  const local = document.querySelector(".country__tracking");
   obj.forEach(element => {
     const li = document.createElement("li");
     li.classList.add("country__name");
@@ -84,7 +36,7 @@ function country(obj) {
   });
 }
 
-function search() {
+export function search() {
   const options = {
     isCaseSensitive: false,
     findAllMatches: false,
@@ -114,14 +66,14 @@ function search() {
   ref.scrollIntoView();
 }
 
-function scrollToTop() {
+export function scrollToTop() {
   window.scrollTo({ top: 0});
 }
 
-function showTopBtn() {
+export function showTopBtn(element) {
   if (window.scrollY > 1200) {
-    toTopBtn.classList.remove('hidden');
+    element.classList.remove('hidden');
   } else {
-    toTopBtn.classList.add('hidden');
+    element.classList.add('hidden');
   }
 }
