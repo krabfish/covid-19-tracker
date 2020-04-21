@@ -20,8 +20,8 @@ const categories = [
 let obj = {};
 
 // TODO: Development - It's a mess :(
-fetch('testing.json')
-// fetch('https://api.covid19api.com/summary')
+// fetch('testing.json')
+fetch('https://api.covid19api.com/summary')
 .then((response) => {
   return response.json();
 })
