@@ -18,26 +18,32 @@ const categories = [
   "Total Recovered"
 ]
 let obj = {};
+const MODE = 'development'
+let path;
 
-// TODO: Development - It's a mess :(
-// fetch('testing.json')
-fetch('https://api.covid19api.com/summary')
-.then((response) => {
-  return response.json();
-})
-.then((data) => {
-  // console.log(data);
-  date.innerHTML = new Date();
+if (MODE === 'production') {
+  path = 'https://api.covid19api.com/summary'
+} else {
+  path = 'apitesting.json'
+}
 
-  obj = data.Global;
-  globally(obj, categories);
+fetch(path)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      date.innerHTML = new Date();
 
-  obj = data.Countries;
+      obj = data.Global;
+      globally(obj, categories);
 
-  country(obj, categories);
-  const countries = obj;
-  loader.classList.add("hidden");
-});
+      obj = data.Countries;
+
+      country(obj, categories);
+      const countries = obj;
+      loader.classList.add("hidden");
+    });
+
 
 
 /*
