@@ -2,7 +2,7 @@
 node_modules
 
 # Files
-testing.json
+apitesting.json
 
 # System Files
 .DS_Store
