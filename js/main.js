@@ -2,6 +2,7 @@
 * Import App functions from function.js
 */
 import { globally, country, search, scrollToTop, showTopBtn } from "./functions.js";
+import apiTesting from './apitesting.json'
 
 /*
 * Query Elements & define Array
@@ -19,32 +20,36 @@ const categories = [
 ]
 let obj = {};
 const MODE = 'development'
-let path;
 
 if (MODE === 'production') {
-  path = 'https://api.covid19api.com/summary'
+  fetch('https://api.covid19api.com/summary')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        date.innerHTML = new Date();
+
+        obj = data.Global;
+        globally(obj, categories);
+
+        obj = data.Countries;
+
+        country(obj, categories);
+        const countries = obj;
+        loader.classList.add("hidden");
+      });
 } else {
-  path = 'apitesting.json'
+  date.innerHTML = new Date();
+
+  obj = apiTesting.Global;
+  globally(obj, categories);
+
+  obj = apiTesting.Countries;
+
+  country(obj, categories);
+  const countries = obj;
+  loader.classList.add("hidden");
 }
-
-fetch(path)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      date.innerHTML = new Date();
-
-      obj = data.Global;
-      globally(obj, categories);
-
-      obj = data.Countries;
-
-      country(obj, categories);
-      const countries = obj;
-      loader.classList.add("hidden");
-    });
-
-
 
 /*
 * Input setup
