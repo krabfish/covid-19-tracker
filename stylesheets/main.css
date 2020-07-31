@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Source+Sans+Pro:wght@400;600&display=swap");
 html {
   color: #222;
   font-size: 1em;
@@ -246,30 +247,6 @@ textarea {
   .col-12 {
     width: 100%; } }
 
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/fonts/OpenSans-Light.ttf");
-  font-weight: 300;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url("/fonts/OpenSans-Regular.ttf");
-  font-weight: 400;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url("/fonts/SourceSansPro-Light.ttf");
-  font-weight: 300;
-  font-display: swap; }
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  src: url("/fonts/SourceSansPro-Bold.ttf");
-  font-weight: 600;
-  font-display: swap; }
-
 .bg-dark {
   background-color: #333333; }
 
@@ -327,7 +304,8 @@ textarea {
   z-index: 99; }
 
 .loader {
-  animation: fade 1s infinite ease-in-out; }
+  animation: fade 1s infinite ease-in-out;
+  text-align: center; }
 
 @keyframes fade {
   0% {

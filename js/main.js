@@ -19,7 +19,7 @@ const categories = [
   "Total Recovered"
 ]
 let obj = {};
-const MODE = 'development'
+const MODE = 'production'
 
 if (MODE === 'production') {
   fetch('https://api.covid19api.com/summary')
