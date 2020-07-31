@@ -24,7 +24,7 @@ export function country(obj, categories) {
 
     let index = 0;
     for (const item in element) {
-      if (!arr.includes(item)) {
+      if (!arr.includes(item) && index < 6) {
         const listItem = document.createElement("li");
         listItem.innerText = categories[index] + ': ' + element[item];
         listItem.classList.add("country__category");

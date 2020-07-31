@@ -3,8 +3,12 @@
 .bg-dark
   background-color: #333333
 
+.d-block
+  display: block
+
 .global__tracking
   list-style: none
+  padding: 0
 
 .global__tracking li
   background-color: lighten(#333333, 70%)
@@ -64,8 +68,14 @@
   100%
     opacity: 0
 
+.font-tiny
+  font-size: 12px
+
 .hidden
   display: none
+
+.search__button
+  margin-top: 1em
 
 .text-center
   text-align: center
@@ -76,6 +86,17 @@
 .text-light
   font-weight: 300
 
+.footbar
+  background-color: #333333
+
+  a
+    margin: 0 1rem
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+
 
 @media screen and (min-width: 576px)
   .country__list
@@ -85,3 +106,6 @@
   .search
     text-align: center
     margin: 0.5rem
+
+  .search__button
+    margin-top: 0

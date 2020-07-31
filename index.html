@@ -47,31 +47,36 @@
     </section>
 
     <section id="countries">
-
       <div class="row">
         <header class="col-12">
           <h2 class="text-center">Country</h2>
+          <p class="text-center text-light">Search by country name or country code (ex: AU, US, UK)</p>
         </header>
         <div class="col-12 text-center">
           <label for="search">
             <input id="search" type="text" placeholder="Enter Country Name or Code">
           </label>
-          <button>Search</button>
+          <button class="search__button">Search</button>
         </div>
       </div>
-
       <div id="country">
         <ul class="country__tracking"></ul>
       </div>
     </section>
+
     <button class="top hidden">Scroll To Top</button>
     <h1 class="loader">Loading...</h1>
   </main>
 
-  <footer>
-    <img src="img/logo.svg" alt="">
-    <p>2020 © Michael Neumann</p>
-    <a href="mailto:mkn.dev.linux@gmail.com">Email</a>
+  <footer class="footbar">
+    <div class="row">
+      <nav class="col-12 text-center">
+        <a class="d-block m-1" href="https://krabfishstudios.com"><img src="img/logo.svg" alt="Krabfish"></a>
+        <a class="text-white" href="mailto:mkn.dev.linux@gmail.com">Email</a>
+        <a class="text-white" href="https://twitter.com/krabfish">Twitter</a>
+        <p class="text-white font-tiny">All rights reserved. 2020 © Michael Neumann</p>
+      </nav>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
