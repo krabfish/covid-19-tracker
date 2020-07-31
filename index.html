@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>COVID-19 Tracker</title>
@@ -20,28 +19,47 @@
   <link rel="stylesheet" href="stylesheets/main.css">
 
   <meta name="theme-color" content="#fafafa">
-</head>
+  <style>
 
+  </style>
+</head>
 <body>
-  <header>
+  <header class="row bg-dark">
     <div class="container">
-      <h1>COVID-19 Tracker</h1>
-      <h3>As of <span class="date"></span></h3>
+      <div class="col-12">
+        <h1 class="text-center text-white">COVID-19 Tracker</h1>
+        <h3 class="text-center text-white text-light">As of <span class="current-date text-white"></span></h3>
+      </div>
     </div>
   </header>
-  <main id=app>
+
+  <main class="container">
     <section id="global">
-      <h2>Globally</h2>
-      <ul class="global__tracking"></ul>
-    </section>
-    <section id="countries">
-      <h2>Country</h2>
-      <div class="search">
-        <label for="search__input">
-          <input id="search__input" type="text" placeholder="Enter Country Name or Code">
-        </label>
-        <button class="search__button">Search</button>
+      <div class="row">
+        <header class="col-12">
+          <h2 class="text-center">Globally</h2>
+          <p class="text-center text-light">The total global number of cases, deaths, and recoveries per day and overall.</p>
+        </header>
+        <div class="col-12 text-center">
+          <ul class="global__tracking"></ul>
+        </div>
       </div>
+    </section>
+
+    <section id="countries">
+
+      <div class="row">
+        <header class="col-12">
+          <h2 class="text-center">Country</h2>
+        </header>
+        <div class="col-12 text-center">
+          <label for="search">
+            <input id="search" type="text" placeholder="Enter Country Name or Code">
+          </label>
+          <button>Search</button>
+        </div>
+      </div>
+
       <div id="country">
         <ul class="country__tracking"></ul>
       </div>
@@ -61,5 +79,4 @@
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
 </body>
-
 </html>

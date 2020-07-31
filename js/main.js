@@ -8,8 +8,8 @@ import apiTesting from './apitesting.json'
 * Query Elements & define Array
 * */
 const loader = document.querySelector(".loader");
-const date = document.querySelector(".date");
-const input = document.getElementById("search__input");
+const currentDate = document.querySelector('.current-date');
+const input = document.getElementById("search");
 const categories = [
   "New Confirmed",
   "Total Confirmed",
@@ -27,7 +27,7 @@ if (MODE === 'production') {
         return response.json();
       })
       .then((data) => {
-        date.innerHTML = new Date();
+        currentDate.innerHTML = new Date();
 
         obj = data.Global;
         globally(obj, categories);
@@ -39,7 +39,7 @@ if (MODE === 'production') {
         loader.classList.add("hidden");
       });
 } else {
-  date.innerHTML = new Date();
+  currentDate.innerHTML = new Date();
 
   obj = apiTesting.Global;
   globally(obj, categories);

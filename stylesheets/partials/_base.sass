@@ -1,7 +1,5 @@
 @import "../modules/all"
 
-@import '../modules/all'
-
 html
   color: #222
   font-size: 1em
@@ -20,6 +18,27 @@ h1, h2, h3, h4, h5, h6
 
 section
   margin: 4em 0
+
+input
+  border: 1px solid #333333
+  border-radius: $border-radius
+  height: 3em
+  padding: 1em
+  width: 250px
+
+  &:focus
+    outline: none
+
+button
+  background-color: orange
+  border: none
+  border-radius: $border-radius
+  padding: 1em
+  transition: all 500ms ease-in-out
+
+  &:hover
+    background-color: #333333
+    color: white
 
 ::-moz-selection, ::selection
   background: #b3d4fc
