@@ -1,11 +1,5 @@
-# Directories
 node_modules
-
-# Files
-testing.json
-
-# System Files
+dist
+.cache
 .DS_Store
-
-#IDE
 .idea

@@ -2,13 +2,14 @@
 * Import App functions from function.js
 */
 import { globally, country, search, scrollToTop, showTopBtn } from "./functions.js";
+import apiTesting from './apitesting.json'
 
 /*
 * Query Elements & define Array
 * */
 const loader = document.querySelector(".loader");
-const date = document.querySelector(".date");
-const input = document.getElementById("search__input");
+const currentDate = document.querySelector('.current-date');
+const input = document.getElementById("search");
 const categories = [
   "New Confirmed",
   "Total Confirmed",
@@ -18,27 +19,37 @@ const categories = [
   "Total Recovered"
 ]
 let obj = {};
+const MODE = 'development'
 
-// TODO: Development - It's a mess :(
-// fetch('testing.json')
-fetch('https://api.covid19api.com/summary')
-.then((response) => {
-  return response.json();
-})
-.then((data) => {
-  // console.log(data);
-  date.innerHTML = new Date();
+if (MODE === 'production') {
+  fetch('https://api.covid19api.com/summary')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        currentDate.innerHTML = new Date();
 
-  obj = data.Global;
+        obj = data.Global;
+        globally(obj, categories);
+
+        obj = data.Countries;
+
+        country(obj, categories);
+        const countries = obj;
+        loader.classList.add("hidden");
+      });
+} else {
+  currentDate.innerHTML = new Date();
+
+  obj = apiTesting.Global;
   globally(obj, categories);
 
-  obj = data.Countries;
+  obj = apiTesting.Countries;
 
   country(obj, categories);
   const countries = obj;
   loader.classList.add("hidden");
-});
-
+}
 
 /*
 * Input setup
